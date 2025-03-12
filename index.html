@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <p> PG1<br>
+    #include stdio.h<br>
+        #include conio.h<br>
+        #include graphics.h <br>
+        #include math.h<br>
+        void main()<br>
+        {<br>
+            <br>int gd=DETECT,gm,ang;
+            <br>       double de,x1,x2,y1,y2;
+            <br>initgraph(&gd,&gm,"c:||+cbgi");
+            <br>circle(200,140,40);
+            <br>circle(250,140,20);
+            <br> printf("Enter the angle:");
+            <br> scanf("%d",&ang);
+            <br> de=ang*3.14/180;
+            <br> x1=200+100*cos(de)+100*sin(de);
+            <br> y1=200+(-100)*sin(de)+100*cos(de);
+            <br> x2=200+150*cos(de)+100*sin(de);
+            <br> y2=200+(-150)*sin(de)+100*cos(de);
+            <br> circle(x2,y2,20);
+            <br> circle(x1,y1,40);
+            <br> getch();
+            <br> closegraph();
+            <br> }
+    </p>
+    <p>PG2<br>
+    #include stdio.h <br>
+        #include conio.h  <br>
+        #include graphics.h <br>
+        #include dos.h <br>
+        <br>
+        class drop <br>
+        { <br>
+        int i,HORTY_DIR; <br>
+        public: <br>
+        void disp(); <br>
+        void disp1(); <br>
+        void disp2(); <br>
+        void disp3(); <br>
+        }; <br>
+        <br>
+        void drop::disp() <br>
+        { <br>
+        settextstyle(1,HORTY_DIR,5); <br>
+        outtextxy(150,150,"BCA 3 YEAR"); <br>
+        } <br>
+        <br>
+        void drop::disp1() <br>
+        { <br>
+        for(i=1;i<=300;i++) <br>
+        { <br>
+        outtextxy(150,20,"BCA 3 YEAR"); <br>
+        outtextxy(150,20+i,"BCA"); <br>
+        delay(10); <br>
+        cleardevice(); <br>
+        } <br>
+        } <br>
+        <br>
+        void drop::disp2() <br>
+        { <br>
+        for(i=1;i<=300;i++) <br>
+        { <br>
+        outtextxy(150,20,"BCA 3 YEAR"); <br>
+        outtextxy(150,320,"BCA"); <br>
+        outtextxy(220,20+i,"3"); <br>
+        delay(10); <br>
+        cleardevice(); <br>
+        } <br>
+        } <br>
+        <br>
+        void drop::disp3() <br>
+        { <br>
+        for(i=1;i<=300;i++) <br>
+        { <br>
+        outtextxy(150,20,"BCA 3 YEAR"); <br>
+        outtextxy(150,320,"BCA"); <br>
+        outtextxy(220,320,"3"); <br>
+        outtextxy(280,20+i,"YEAR"); <br>
+        delay(10); <br>
+        cleardevice(); <br>
+        } <br>
+        } <br>
+        <br>
+        void main() <br>
+        { <br>
+        clrscr(); <br>
+        int gm,gd=DETECT,HORTY_DIR; <br>
+        initgraph(&gd,&gm,"D:\\top\\bgi"); <br>
+        settextstyle(1,HORTY_DIR,5); <br>
+        outtextxy(150,150,"BCA 3 YEAR"); <br>
+        drop d; <br>
+        d.disp(); <br>
+        d.disp1(); <br>
+        d.disp2(); <br>
+        d.disp3(); <br>
+        closegraph(); <br>
+        getch(); <br>
+        } <br></p> 
+        <p>PG3<br>
+            #include stdio.h <br>
+                #include conio.h <br>
+                #include math.h <br>
+                #include stdlib.h <br>
+                #include process.h <br>
+                #include graphics.h <br>
+                <br>
+                void main() <br>
+                { <br>
+                clrscr(); <br>
+                int gd=DETECT,gm,i,j,x1,y1,x2,y2; <br>
+                float dx,dy,step,xin,yin,x,y; <br>
+                char q[10]; <br>
+                printf("\n Enter the x,y coordinate values:\n"); <br>
+                scanf("%d%d%d%d",&x1,&y1,&x2,&y2); <br>
+                initgraph(&gd,&gm," "); <br>
+                cleardevice; <br>
+                x1=x1+50; <br>
+                x2=x2+50; <br>
+                y1=450-y1; <br>
+                y2=450-y2; <br>
+                line(50,10,50,435); <br>
+                outtextxy(10,15,"YAXIS"); <br>
+                line(50,435,450,435); <br>
+                outtextxy(490,435,"XAXIS"); <br>
+                <br>
+                for(j=30;j<390;i+=30,j+=30) 
+                <br>{ <br>
+                sprintf(q,"%2d",j); <br>
+                outtextxy(50+j,450,q); <br>
+                } <br>
+                <br>
+                for(j=30;j<430;i+=30,j+=30) <br>
+                { <br>
+                sprintf(q,"%2d",j); <br>
+                outtextxy(20,450-j,q); <br>
+                } <br>
+                <br>
+                dx=x2-x1; <br>
+                dy=y2-y1; <br>
+                if(abs(dx)>abs(dy)) <br>
+                    step=abs(dx); <br>
+                else <br>
+                    step=abs(dy); <br>
+                <br>
+                xin=dx/step; <br>
+                yin=dy/step; <br>
+                x=x1; <br>
+                y=y1; <br>
+                <br>
+                for(i=0;i< step;i++) <br>
+                { <br>
+                    putpixel(x,y,WHITE); <br>
+                    x+=xin; <br>
+                    y+=yin; <br>
+                } <br>
+                <br>
+                getch(); <br>
+                closegraph(); <br>
+                } <br>
+                
+        </p>   
+        <p> PG4<br>
+            #include stdio.h <br>
+                #include conio.h <br>
+                #include stdlib.h <br>
+                #include graphics.h <br>
+                <br>
+                void draw_car() <br>
+                { <br>
+                    circle(50,200,20); <br>
+                    circle(200,200,20); <br>
+                    line(25,200,0,200); <br>
+                    line(0,200,0,160); <br>
+                    line(0,160,40,160); <br>
+                    line(40,160,70,130); <br>
+                    line(70,130,170,130); <br>
+                    line(170,130,200,160); <br>
+                    line(200,160,260,160); <br>
+                    line(260,160,260,200); <br>
+                    line(260,200,225,200); <br>
+                    line(175,200,75,200); <br>
+                } <br>
+                <br>
+                void main() <br>
+                { <br>
+                    int gd,gm,i,j; <br>
+                    void*bitmap; <br>
+                    detectgraph(&gd,&gm); <br>
+                    initgraph(&gd,&gm," "); <br>
+                    draw_car(); <br>
+                    bitmap=malloc(imagesize(0,130,270,230)); <br>
+                    getimage(0,130,270,230,bitmap); <br>
+                    for(i=0;!kbhit();i+=5) <br>
+                    { <br>
+                        if(i>500) <br>
+                            i=0; <br>
+                        putimage(i,130,bitmap,OR_PUT); <br>
+                        putimage(i,130,bitmap,XOR_PUT); <br>
+                    } <br>
+                    closegraph(); <br>
+                } <br>
+                </p>    
+                <p> PG5 <br>
+                    #include<dos.h> <br>
+                        #include stdio.h <br>
+                        #include conio.h <br>
+                        #include stdlib.h <br>
+                        #include graphics.h <br>
+                        #include math.h <br>
+                        <br>
+                        void main() <br>
+                        { <br>
+                            int d=DETECT,m; <br>
+                            initgraph(&d,&m," "); <br>
+                            float x=1,y=0.00000,j=0.5,count=0.1; <br>
+                            float r=15; <br>
+                            setcolor(14); <br>
+                            line(0,215,650,215); <br>
+                            sleep(1); <br>
+                            <br>
+                            for(int k=0;k<=7;k++) <br>
+                            { <br>
+                                for(float i=90;i<270;i+=10) <br>
+                                { <br>
+                                    y=cos(((i*22/7)/180)/j); <br>
+                                    if(y>0) <br>
+                                        y=-y; <br>
+                                    x+=5; <br>
+                                    setcolor(14); <br>
+                                    setfillstyle(1,i); <br>
+                                    circle(x,y*100+200,r); <br>
+                                    floodfill(x,y*100+200,14); <br>
+                                    delay(100); <br>
+                                    setcolor(0); <br>
+                                    setfillstyle(1,0); <br>
+                                    circle(x,y*100+200,r); <br>
+                                    floodfill(x,y*100+200,0); <br>
+                                } <br>
+                                j+=count; <br>
+                                count+=0.1; <br>
+                            } <br>
+                            getch(); <br>
+                        } <br>
+                        
+                </p>
+                <p>
+                    PG6 <br>
+                    #include graphics.h <br>
+                        #include dos.h <br>
+                        #include conio.h <br>
+                        #include iostream.h <br>
+                        <br>
+                        void main() <br>
+                        { <br>
+                            int xwmin,xwmax,ywmin,ywmax,xa,ya; <br>
+                            int driver=DETECT,mode; <br>
+                            initgraph(&driver,&mode,"D://top//bgi"); <br>
+                            cleardevice(); <br>
+                            <br>
+                            xwmin=100; xwmax=540; <br>
+                            ywmin=100; ywmax=380; <br>
+                            setcolor(14); <br>
+                            rectangle(xwmin,ywmin,xwmax,ywmax); <br>
+                            <br>
+                            cout<<"\n enter the xa value"; <br>
+                            cin>>xa; <br>
+                            cout<<"\n enter the ya value"; <br>
+                            cin>>ya; <br>
+                            <br>
+                            putpixel(xa,ya,15); <br>
+                            <br>
+                            if((xa==xwmin)||(xa==xwmax)&&(ya>ywmin)&&(ya<ywmax)) <br>
+                            { <br>
+                                cout<<"\n\t the point is on the window:"; <br>
+                            } <br>
+                            else if((xa>xwmin)&&(xa<xwmax)&&(ya>ywmin)&&(ya<ywmax)) <br>
+                            { <br>
+                                cout<<"\n\t the point (xa,ya) is inside the window:"; <br>
+                            } <br>
+                            else <br>
+                            { <br>
+                                cout<<"\n\t the point is outside the window:"; <br>
+                            } <br>
+                            <br>
+                            getch(); <br>
+                        } <br>
+                        
+                </p>
+
+</body>
+</html>
